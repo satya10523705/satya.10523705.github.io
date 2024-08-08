@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        window.onload = function() {
+            var nama = localStorage.getItem("nama");
+            var alamat = localStorage.getItem("alamat");
+            var produk = localStorage.getItem("produk");
+            var jumlah = localStorage.getItem("jumlah");
+
+            document.getElementById("nama").textContent = nama;
+            document.getElementById("alamat").textContent = alamat;
+            document.getElementById("produk").textContent = produk;
+            document.getElementById("jumlah").textContent = jumlah;
+            document.getElementById("total").textContent = "Rp " + (jumlah * 100000); // Asumsi harga satuan produk adalah Rp 100.000
+        }
+    </script>
+</head>
+<body>
+    <div id="container">
+        <div id="header">
+            <h1>Invoice</h1>
+        </div>
+        <div id="menu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="produk.html">Produk/Jasa</a></li>
+                <li><a href="transaksi.html">Transaksi</a></li>
+                <li><a href="invoice.html">Invoice</a></li>
+                <li><a href="kontak.html">Kontak Kami</a></li>
+                <li><a href="tentang.html">Tentang</a></li>
+            </ul>
+        </div>
+        <div id="main-content">
+            <div id="sidebar">
+                <!-- Sidebar content -->
+            </div>
+            <div id="content">
+                <h2>Invoice Anda</h2>
+                <div class="invoice">
+                    <p>Nama: <span id="nama"></span></p>
+                    <p>Alamat: <span id="alamat"></span></p>
+                    <p>Produk: <span id="produk"></span></p>
+                    <p>Jumlah: <span id="jumlah"></span></p>
+                    <p>Total: <span id="total"></span></p>
+                </div>
+            </div>
+        </div>
+        <div id="footer">
+            <p>&copy; 2024 Rumah Keyboard</p>
+        </div>
+    </div>
+</body>
+</html>
